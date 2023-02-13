@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
-import Weather from './components/weather';
+import { Weather } from './components/Weather';
 
 
 const API_KEY = '6c1dc0afa5184393ff55633bdc74474c';
@@ -36,9 +36,17 @@ export default function App() {
       </View>
     )
   }
+  else if(weatherData === null) {
+    return (
+        <View style={styles.container}>
+            <SearchBar fetchWeatherData={fetchWeatherData}/>
+            <Text style={styles.primaryText}>City Is Not Found! Try Different City</Text>
+        </View>
+    )
+}
   return (
     <View style={styles.container}>
-     <Weather />
+     <Weather fetchWeatherData ={fetchWeatherData}/>
     </View>
   );
 }
