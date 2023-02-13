@@ -1,10 +1,10 @@
 import React from 'react'
-import { ViewComponent } from 'react-native'
+import { ViewComponent,View } from 'react-native'
 
 export default function Searchbar() {
   return (
-    <ViewComponent>
+    <View>
         
-    </ViewComponent>
+    </View>
   )
 }
